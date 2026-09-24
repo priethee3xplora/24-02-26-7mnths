@@ -41,9 +41,9 @@
 }
 
 body {
-  display: flex;
-  align-items: flex-end;
+ display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   background-color: var(--dark-color);
   overflow: hidden;
@@ -1175,8 +1175,9 @@ body {
 
   .flowers {
     transform: scale(0.55);
-    transform-origin: bottom center;
+    transform-origin: center center;
   }
+
 }
 
 /* Very small phones */
