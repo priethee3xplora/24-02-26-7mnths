@@ -1239,3 +1239,21 @@ body {
 * {
   max-width: 100%;
 }
+.flowers {
+  transform: translateY(-18vh) scale(0.7);
+  transform-origin: center center;
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .flowers {
+    transform: translateY(-12vh) scale(0.55);
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .flowers {
+    transform: translateY(-10vh) scale(0.48);
+  }
+}
