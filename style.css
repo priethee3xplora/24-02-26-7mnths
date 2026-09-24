@@ -41,9 +41,9 @@
 }
 
 body {
-  display: flex;
-  align-items: flex-end;
+ display: flex;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   background-color: var(--dark-color);
   overflow: hidden;
@@ -68,7 +68,7 @@ body {
 
 .flower {
   position: absolute;
-  bottom: 25vmin;
+  bottom: 10vmin;
   transform-origin: bottom center;
   z-index: 10;
   --fl-speed: 0.8s;
@@ -1105,4 +1105,137 @@ mask-image: linear-gradient(to top, transparent 40%, #079097 80%) !important;
   color: #ffe6f2;
   font-style: italic;
   line-height: 1.5;
+}
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Keep the message safely inside the screen */
+.love-message {
+  position: fixed;
+  top: clamp(20px, 5vh, 60px);
+  left: 50%;
+  width: min(90vw, 900px);
+  padding: 0 15px;
+  transform: translateX(-50%);
+  z-index: 1000;
+  text-align: center;
+}
+
+.love-message h1 {
+  font-size: clamp(1.7rem, 6vw, 4rem);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.love-message p {
+  font-size: clamp(0.9rem, 3.5vw, 1.5rem);
+  line-height: 1.4;
+  margin: 12px auto 0;
+  max-width: 700px;
+}
+
+/* Keep the bouquet centered */
+.flowers {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  transform: scale(0.7);
+  transform-origin: bottom center;
+}
+
+/* Phones */
+@media (max-width: 600px) {
+
+  body {
+    min-height: 100dvh;
+  }
+
+  .love-message {
+    top: 25px;
+    width: 94vw;
+  }
+
+  .love-message h1 {
+    font-size: clamp(1.6rem, 8vw, 2.5rem);
+  }
+
+  .love-message p {
+    font-size: clamp(0.85rem, 4vw, 1.15rem);
+    margin-top: 10px;
+    padding: 0 8px;
+  }
+
+  .flowers {
+    transform: scale(0.55);
+    transform-origin: center center;
+  }
+
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+
+  .love-message {
+    top: 18px;
+    width: 96vw;
+  }
+
+  .love-message h1 {
+    font-size: 1.5rem;
+  }
+
+  .love-message p {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+
+  .flowers {
+    transform: scale(0.48);
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+
+  .love-message {
+    top: 10px;
+  }
+
+  .love-message h1 {
+    font-size: 1.5rem;
+  }
+
+  .love-message p {
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+
+  .flowers {
+    transform: scale(0.42);
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .love-message {
+    width: 90vw;
+  }
+
+  .flowers {
+    transform: scale(0.65);
+  }
+}
+
+/* Prevent accidental horizontal scrolling */
+* {
+  max-width: 100%;
 }
